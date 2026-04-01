@@ -36,3 +36,9 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# Token 配置
+token:
+  header: Authorization
+  secret: abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz
+  expireTime: 30
