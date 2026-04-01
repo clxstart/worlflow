@@ -1,0 +1,38 @@
+# 项目配置
+project:
+  name: workflow
+  version: 1.0.0
+
+# 服务配置
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+# Spring 配置
+spring:
+  profiles:
+    active: local
+  # 文件上传
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 200MB
+  # Jackson 配置
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+# 日志配置
+logging:
+  level:
+    com.clx.workflow: debug
+    org.springframework: warn
+
+# MyBatis-Plus 配置
+mybatis-plus:
+  type-aliases-package: com.clx.workflow.**.domain
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
