@@ -7,7 +7,16 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(mvn clean:*)",
-      "Bash(mvn spring-boot:run -q)"
+      "Bash(mvn spring-boot:run -q)",
+      "Bash(cp -r src/main/java/com/clx/workflow/common workflow-common/src/main/java/com/clx/workflow/)",
+      "Bash(cp -r src/main/java/com/clx/workflow/framework workflow-framework/src/main/java/com/clx/workflow/)",
+      "Bash(cp -r src/main/java/com/clx/workflow/system workflow-system/src/main/java/com/clx/workflow/)",
+      "Bash(cp src/main/java/com/clx/workflow/WorkFlowApplication.java workflow-admin/src/main/java/com/clx/workflow/)",
+      "Bash(cp -r src/main/resources/* workflow-admin/src/main/resources/)",
+      "Bash(rm:*)",
+      "Bash(rm -f workflow-common/src/main/java/com/clx/workflow/common/core/domain/model/LoginUser.java workflow-common/src/main/java/com/clx/workflow/common/core/domain/model/LoginBody.java)",
+      "Bash(mkdir -p workflow-framework/src/main/java/com/clx/workflow/common/core/domain/model)",
+      "Bash(mvn spring-boot:run)"
     ]
   }
 }
