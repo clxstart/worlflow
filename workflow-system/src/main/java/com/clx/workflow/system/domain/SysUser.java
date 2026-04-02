@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.clx.workflow.common.core.domain.BaseEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -14,6 +16,7 @@ import javax.validation.constraints.Size;
  * @author clx
  */
 @TableName("sys_user")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class SysUser extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
@@ -83,10 +86,12 @@ public class SysUser extends BaseEntity {
     /**
      * 是否管理员
      */
+    @JsonIgnore
     public boolean isAdmin() {
         return userId != null && 1L == userId;
     }
 
+    @JsonIgnore
     public static boolean isAdmin(Long userId) {
         return userId != null && 1L == userId;
     }

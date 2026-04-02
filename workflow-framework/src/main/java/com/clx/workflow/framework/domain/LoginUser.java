@@ -1,6 +1,8 @@
 package com.clx.workflow.framework.domain;
 
 import com.clx.workflow.system.domain.SysUser;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -12,6 +14,7 @@ import java.util.Set;
  *
  * @author clx
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class LoginUser implements UserDetails {
 
     private static final long serialVersionUID = 1L;

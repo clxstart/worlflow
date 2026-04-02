@@ -16,7 +16,12 @@
       "Bash(rm:*)",
       "Bash(rm -f workflow-common/src/main/java/com/clx/workflow/common/core/domain/model/LoginUser.java workflow-common/src/main/java/com/clx/workflow/common/core/domain/model/LoginBody.java)",
       "Bash(mkdir -p workflow-framework/src/main/java/com/clx/workflow/common/core/domain/model)",
-      "Bash(mvn spring-boot:run)"
+      "Bash(mvn spring-boot:run)",
+      "Bash(mysql -uroot -pchang090011 workflow -e \"source E:/goodworlk/WorkFlow/workflow-admin/src/main/resources/sql/sys_role.sql\")",
+      "Bash(mvn spring-boot:run -pl workflow-admin -Dspring-boot.run.profiles=local)",
+      "Bash(curl -s http://localhost:8080/hello)",
+      "Bash(curl:*)",
+      "Bash(python -m json.tool)"
     ]
   }
 }
