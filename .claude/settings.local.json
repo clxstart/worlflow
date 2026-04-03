@@ -21,7 +21,10 @@
       "Bash(mvn spring-boot:run -pl workflow-admin -Dspring-boot.run.profiles=local)",
       "Bash(curl -s http://localhost:8080/hello)",
       "Bash(curl:*)",
-      "Bash(python -m json.tool)"
+      "Bash(python -m json.tool)",
+      "Bash(mysql -h 127.0.0.1 -P 3307 -u root -p123456 -e \"source /tmp/init_database.sql\")",
+      "Bash(mysql:*)",
+      "Bash(mkdir:*)"
     ]
   }
 }

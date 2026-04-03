@@ -18,6 +18,16 @@
         <module>workflow-common</module>
         <module>workflow-framework</module>
         <module>workflow-system</module>
+        <module>workflow-project</module>
+        <module>workflow-flowable</module>
+        <module>workflow-quartz</module>
+        <module>workflow-generator</module>
+        <module>workflow-oa</module>
+        <module>workflow-hr</module>
+        <module>workflow-finance</module>
+        <module>workflow-crm</module>
+        <module>workflow-asset</module>
+        <module>workflow-doc</module>
     </modules>
 
     <!-- 版本管理 -->
@@ -119,6 +129,79 @@
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi-ooxml</artifactId>
                 <version>${poi.version}</version>
+            </dependency>
+
+            <!-- 新增模块 -->
+            <dependency>
+                <groupId>com.clx</groupId>
+                <artifactId>workflow-project</artifactId>
+                <version>${workflow.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.clx</groupId>
+                <artifactId>workflow-flowable</artifactId>
+                <version>${workflow.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.clx</groupId>
+                <artifactId>workflow-quartz</artifactId>
+                <version>${workflow.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.clx</groupId>
+                <artifactId>workflow-generator</artifactId>
+                <version>${workflow.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.clx</groupId>
+                <artifactId>workflow-oa</artifactId>
+                <version>${workflow.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.clx</groupId>
+                <artifactId>workflow-hr</artifactId>
+                <version>${workflow.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.clx</groupId>
+                <artifactId>workflow-finance</artifactId>
+                <version>${workflow.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.clx</groupId>
+                <artifactId>workflow-crm</artifactId>
+                <version>${workflow.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.clx</groupId>
+                <artifactId>workflow-asset</artifactId>
+                <version>${workflow.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.clx</groupId>
+                <artifactId>workflow-doc</artifactId>
+                <version>${workflow.version}</version>
+            </dependency>
+
+            <!-- Flowable 工作流 -->
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-spring-boot-starter</artifactId>
+                <version>6.8.0</version>
+            </dependency>
+
+            <!-- Quartz 定时任务 -->
+            <dependency>
+                <groupId>org.quartz-scheduler</groupId>
+                <artifactId>quartz</artifactId>
+                <version>2.3.2</version>
+            </dependency>
+
+            <!-- Velocity 代码生成模板 -->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>2.3</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
