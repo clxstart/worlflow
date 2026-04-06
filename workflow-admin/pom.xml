@@ -27,6 +27,12 @@
             <artifactId>workflow-hr</artifactId>
         </dependency>
 
+        <!-- 项目管理模块 -->
+        <dependency>
+            <groupId>com.clx</groupId>
+            <artifactId>workflow-project</artifactId>
+        </dependency>
+
         <!-- MySQL 驱动 -->
         <dependency>
             <groupId>mysql</groupId>
