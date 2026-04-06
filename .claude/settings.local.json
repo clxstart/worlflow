@@ -38,7 +38,8 @@
       "Bash(net start:*)",
       "Bash(where redis-server:*)",
       "Bash(D:\\\\redis\\\\redis-server.exe:*)",
-      "Bash(ls -la \"D:/maven/repository/com/clx/workflow-system/0.0.1-SNAPSHOT/\"*.jar)"
+      "Bash(ls -la \"D:/maven/repository/com/clx/workflow-system/0.0.1-SNAPSHOT/\"*.jar)",
+      "Bash(mvn spring-boot:run -pl workflow-admin -DskipTests)"
     ]
   }
 }
