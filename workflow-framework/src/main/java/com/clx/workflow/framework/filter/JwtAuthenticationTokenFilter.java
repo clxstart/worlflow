@@ -31,7 +31,8 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
     private static final List<String> WHITE_LIST = Arrays.asList(
             "/login", "/register", "/captcha", "/hello", "/user",
-            "/test/**", "/static/**", "/favicon.ico", "/health"
+            "/test/**", "/test/db", "/test/init", "/test/verifyPwd", "/test/fullLogin", "/test/resetPwd", "/test/createTables", "/test/checkRedis",
+            "/static/**", "/favicon.ico", "/health"
     );
 
     private final AntPathMatcher pathMatcher = new AntPathMatcher();

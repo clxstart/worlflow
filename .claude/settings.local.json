@@ -24,7 +24,21 @@
       "Bash(python -m json.tool)",
       "Bash(mysql -h 127.0.0.1 -P 3307 -u root -p123456 -e \"source /tmp/init_database.sql\")",
       "Bash(mysql:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(git config:*)",
+      "Bash(mvn spring-boot:run -pl workflow-admin)",
+      "Bash(taskkill /F /IM java.exe)",
+      "Bash(mvn spring-boot:run -pl workflow-admin -q)",
+      "Bash(netstat -ano)",
+      "Bash(findstr :8080)",
+      "Bash(findstr LISTENING)",
+      "Bash(taskkill:*)",
+      "Bash(redis-cli ping:*)",
+      "Bash(redis-server --service-start)",
+      "Bash(net start:*)",
+      "Bash(where redis-server:*)",
+      "Bash(D:\\\\redis\\\\redis-server.exe:*)",
+      "Bash(ls -la \"D:/maven/repository/com/clx/workflow-system/0.0.1-SNAPSHOT/\"*.jar)"
     ]
   }
 }

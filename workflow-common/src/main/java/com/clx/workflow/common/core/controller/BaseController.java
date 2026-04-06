@@ -1,6 +1,7 @@
 package com.clx.workflow.common.core.controller;
 
 import com.clx.workflow.common.core.domain.AjaxResult;
+import com.clx.workflow.common.utils.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,6 +13,20 @@ import org.slf4j.LoggerFactory;
 public class BaseController {
 
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    /**
+     * 获取当前用户ID
+     */
+    protected Long getUserId() {
+        return SecurityUtils.getUserId();
+    }
+
+    /**
+     * 获取当前用户名
+     */
+    protected String getUsername() {
+        return SecurityUtils.getUsername();
+    }
 
     /**
      * 返回成功

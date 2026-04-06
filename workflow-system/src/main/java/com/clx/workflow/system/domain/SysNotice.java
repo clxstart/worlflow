@@ -1,0 +1,90 @@
+package com.clx.workflow.system.domain;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.clx.workflow.common.core.domain.BaseEntity;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+/**
+ * 通知公告对象 sys_notice
+ *
+ * @author clx
+ */
+@TableName("sys_notice")
+public class SysNotice extends BaseEntity {
+
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * 公告ID
+     */
+    @TableId(type = IdType.AUTO)
+    private Long noticeId;
+
+    /**
+     * 公告标题
+     */
+    @NotBlank(message = "公告标题不能为空")
+    @Size(max = 50, message = "公告标题长度不能超过50个字符")
+    private String noticeTitle;
+
+    /**
+     * 公告类型（1通知 2公告）
+     */
+    @NotBlank(message = "公告类型不能为空")
+    private String noticeType;
+
+    /**
+     * 公告内容
+     */
+    private String noticeContent;
+
+    /**
+     * 公告状态（0正常 1关闭）
+     */
+    private String status;
+
+    // ========== Getter & Setter ==========
+
+    public Long getNoticeId() {
+        return noticeId;
+    }
+
+    public void setNoticeId(Long noticeId) {
+        this.noticeId = noticeId;
+    }
+
+    public String getNoticeTitle() {
+        return noticeTitle;
+    }
+
+    public void setNoticeTitle(String noticeTitle) {
+        this.noticeTitle = noticeTitle;
+    }
+
+    public String getNoticeType() {
+        return noticeType;
+    }
+
+    public void setNoticeType(String noticeType) {
+        this.noticeType = noticeType;
+    }
+
+    public String getNoticeContent() {
+        return noticeContent;
+    }
+
+    public void setNoticeContent(String noticeContent) {
+        this.noticeContent = noticeContent;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+}
