@@ -24,9 +24,10 @@ spring:
     time-zone: GMT+8
     serialization:
       write-dates-as-timestamps: false
-  # Flowable配置
+  # Flowable配置 - 完全禁用
   flowable:
-    database-schema-update: true
+    database-schema-update: false
+    async-executor-activate: false
   # 排除Flowable自动配置
   autoconfigure:
     exclude:
@@ -34,6 +35,7 @@ spring:
       - org.flowable.spring.boot.ProcessEngineAutoConfiguration
       - org.flowable.spring.boot.ProcessEngineServicesAutoConfiguration
       - org.flowable.spring.boot.FlowableAutoConfiguration
+      - org.flowable.spring.boot.FlowableServletIntegratorConfiguration
 
 # 日志配置
 logging:

@@ -18,10 +18,12 @@
             <groupId>com.clx</groupId>
             <artifactId>workflow-common</artifactId>
         </dependency>
+        <!-- 暂时禁用以测试财务模块
         <dependency>
             <groupId>com.clx</groupId>
             <artifactId>workflow-flowable</artifactId>
         </dependency>
+        -->
         <dependency>
             <groupId>com.clx</groupId>
             <artifactId>workflow-hr</artifactId>

@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.clx.workflow.common.exception.ServiceException;
 import com.clx.workflow.common.utils.SecurityUtils;
-import com.clx.workflow.flowable.service.IWfProcessInstanceService;
+// import com.clx.workflow.flowable.service.IWfProcessInstanceService;
 import com.clx.workflow.hr.domain.HrLeaveType;
 import com.clx.workflow.hr.service.IHrLeaveTypeService;
 import com.clx.workflow.oa.domain.OaLeaveApply;
@@ -29,8 +29,8 @@ import java.util.Map;
 public class OaLeaveApplyServiceImpl extends ServiceImpl<OaLeaveApplyMapper, OaLeaveApply>
         implements IOaLeaveApplyService {
 
-    @Autowired
-    private IWfProcessInstanceService processInstanceService;
+    // @Autowired
+    // private IWfProcessInstanceService processInstanceService;
 
     @Autowired
     private IHrLeaveTypeService leaveTypeService;
@@ -93,19 +93,19 @@ public class OaLeaveApplyServiceImpl extends ServiceImpl<OaLeaveApplyMapper, OaL
             }
         }
 
-        // 启动审批流程
+        // 启动审批流程 - 暂时简化
         String businessKey = "leave_" + id;
         String title = apply.getUserName() + "的请假申请";
-        Map<String, Object> variables = new HashMap<>();
-        variables.put("userId", apply.getUserId());
-        variables.put("leaveDays", apply.getLeaveDays());
-        variables.put("leaveType", apply.getLeaveTypeName());
+        // Map<String, Object> variables = new HashMap<>();
+        // variables.put("userId", apply.getUserId());
+        // variables.put("leaveDays", apply.getLeaveDays());
+        // variables.put("leaveType", apply.getLeaveTypeName());
 
-        String processInstanceId = processInstanceService.startProcess(
-                "leave_approval", businessKey, "oa_leave_apply", id, title, variables);
+        // String processInstanceId = processInstanceService.startProcess(
+        //         "leave_approval", businessKey, "oa_leave_apply", id, title, variables);
 
         // 更新申请状态
-        apply.setProcessInstanceId(processInstanceId);
+        // apply.setProcessInstanceId(processInstanceId);
         apply.setStatus("pending");
         return this.updateById(apply);
     }
@@ -121,10 +121,10 @@ public class OaLeaveApplyServiceImpl extends ServiceImpl<OaLeaveApplyMapper, OaL
             throw new ServiceException("只有审批中的申请才能撤销");
         }
 
-        // 终止流程
-        if (apply.getProcessInstanceId() != null) {
-            processInstanceService.terminateProcess(apply.getProcessInstanceId(), "用户撤销申请");
-        }
+        // 终止流程 - 暂时简化
+        // if (apply.getProcessInstanceId() != null) {
+        //     processInstanceService.terminateProcess(apply.getProcessInstanceId(), "用户撤销申请");
+        // }
 
         // 更新状态
         apply.setStatus("canceled");

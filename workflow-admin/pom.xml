@@ -39,10 +39,17 @@
             <artifactId>workflow-oa</artifactId>
         </dependency>
 
-        <!-- 工作流模块 -->
+        <!-- 工作流模块 - 暂时禁用以测试财务模块
         <dependency>
             <groupId>com.clx</groupId>
             <artifactId>workflow-flowable</artifactId>
+        </dependency>
+        -->
+
+        <!-- 财务管理模块 -->
+        <dependency>
+            <groupId>com.clx</groupId>
+            <artifactId>workflow-finance</artifactId>
         </dependency>
 
         <!-- MySQL 驱动 -->
