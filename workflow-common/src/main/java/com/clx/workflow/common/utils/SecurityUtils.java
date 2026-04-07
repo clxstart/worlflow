@@ -17,11 +17,24 @@ public class SecurityUtils {
     public static Long getUserId() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication != null && authentication.getPrincipal() instanceof UserDetails) {
-            // 假设用户详情中存储了用户ID，这里需要根据实际情况调整
-            // 暂时返回默认管理员ID
+            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+            // 如果是LoginUser类型，尝试获取userId
+            if (userDetails.getClass().getName().contains("LoginUser")) {
+                try {
+                    // 通过反射获取userId
+                    java.lang.reflect.Method method = userDetails.getClass().getMethod("getUserId");
+                    Object userId = method.invoke(userDetails);
+                    if (userId instanceof Long) {
+                        return (Long) userId;
+                    }
+                } catch (Exception e) {
+                    // 忽略异常
+                }
+            }
+            // 默认返回管理员ID
             return 1L;
         }
-        return null;
+        return 1L;
     }
 
     /**

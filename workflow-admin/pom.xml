@@ -52,6 +52,12 @@
             <artifactId>workflow-finance</artifactId>
         </dependency>
 
+        <!-- CRM客户管理模块 -->
+        <dependency>
+            <groupId>com.clx</groupId>
+            <artifactId>workflow-crm</artifactId>
+        </dependency>
+
         <!-- MySQL 驱动 -->
         <dependency>
             <groupId>mysql</groupId>
