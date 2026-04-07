@@ -19,6 +19,18 @@
             <artifactId>workflow-common</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.clx</groupId>
+            <artifactId>workflow-flowable</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.clx</groupId>
+            <artifactId>workflow-hr</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.clx</groupId>
+            <artifactId>workflow-system</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>

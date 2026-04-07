@@ -33,6 +33,18 @@
             <artifactId>workflow-project</artifactId>
         </dependency>
 
+        <!-- OA审批模块 -->
+        <dependency>
+            <groupId>com.clx</groupId>
+            <artifactId>workflow-oa</artifactId>
+        </dependency>
+
+        <!-- 工作流模块 -->
+        <dependency>
+            <groupId>com.clx</groupId>
+            <artifactId>workflow-flowable</artifactId>
+        </dependency>
+
         <!-- MySQL 驱动 -->
         <dependency>
             <groupId>mysql</groupId>

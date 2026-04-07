@@ -41,4 +41,12 @@ public class SecurityUtils {
     public static boolean isAdmin(Long userId) {
         return userId != null && 1L == userId;
     }
+
+    /**
+     * 获取当前用户部门ID
+     */
+    public static Long getDeptId() {
+        // 暂时返回默认部门ID，需要根据实际情况从用户详情中获取
+        return 100L;
+    }
 }

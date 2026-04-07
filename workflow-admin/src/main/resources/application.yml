@@ -24,6 +24,16 @@ spring:
     time-zone: GMT+8
     serialization:
       write-dates-as-timestamps: false
+  # Flowable配置
+  flowable:
+    database-schema-update: true
+  # 排除Flowable自动配置
+  autoconfigure:
+    exclude:
+      - org.flowable.spring.boot.FlowableSecurityAutoConfiguration
+      - org.flowable.spring.boot.ProcessEngineAutoConfiguration
+      - org.flowable.spring.boot.ProcessEngineServicesAutoConfiguration
+      - org.flowable.spring.boot.FlowableAutoConfiguration
 
 # 日志配置
 logging:
@@ -44,3 +54,31 @@ token:
   header: Authorization
   secret: abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz
   expireTime: 30
+
+# Flowable 工作流配置
+flowable:
+  # 自动部署resources/processes目录下的流程定义
+  check-process-definitions: false
+  # 异步执行器激活
+  async-executor-activate: true
+  # 数据库表自动更新（true会自动创建表）
+  database-schema-update: true
+  # 历史记录级别（full完整记录）
+  history-level: full
+  # 进程引擎配置
+  process-definition-location-prefix: classpath*:/processes/
+  # 禁用自动部署
+  cmmn:
+    enabled: false
+  dmn:
+    enabled: false
+  form:
+    enabled: false
+  content:
+    enabled: false
+  idm:
+    enabled: false
+  eventregistry:
+    enabled: false
+  app:
+    enabled: false
