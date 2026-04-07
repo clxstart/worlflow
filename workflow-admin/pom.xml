@@ -58,6 +58,12 @@
             <artifactId>workflow-crm</artifactId>
         </dependency>
 
+        <!-- 资产管理模块 -->
+        <dependency>
+            <groupId>com.clx</groupId>
+            <artifactId>workflow-asset</artifactId>
+        </dependency>
+
         <!-- MySQL 驱动 -->
         <dependency>
             <groupId>mysql</groupId>

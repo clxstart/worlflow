@@ -1,5 +1,6 @@
 package com.clx.workflow.common.core.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.clx.workflow.common.core.domain.AjaxResult;
 import com.clx.workflow.common.utils.SecurityUtils;
 import org.slf4j.Logger;
@@ -13,6 +14,25 @@ import org.slf4j.LoggerFactory;
 public class BaseController {
 
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    /**
+     * 默认页码
+     */
+    protected static final int DEFAULT_PAGE_NUM = 1;
+
+    /**
+     * 默认每页数量
+     */
+    protected static final int DEFAULT_PAGE_SIZE = 10;
+
+    /**
+     * 获取分页对象
+     */
+    protected <T> Page<T> getPage() {
+        int pageNum = DEFAULT_PAGE_NUM;
+        int pageSize = DEFAULT_PAGE_SIZE;
+        return new Page<>(pageNum, pageSize);
+    }
 
     /**
      * 获取当前用户ID
